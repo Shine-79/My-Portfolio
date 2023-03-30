@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Image Gallery</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="transition.html">Transition</a></li>
+      <li><a href="map.html">Map</a></li>
+      <li><a href="animation.html">Animation</a></li>
+      <li><a href="contact.html">Contact</a></li>  
+    </ul>
+  </nav>
+  <h1>JavaScript Image Gallery</h1>
+  <div class="gallery-container">
+    <div class="thumbnails">
+      <img src="img1-thumb.jpg" alt="Image 1" onclick="displayImage(this)">
+      <img src="img2-thumb.jpg" alt="Image 2" onclick="displayImage(this)">
+      <img src="img3-thumb.jpg" alt="Image 3" onclick="displayImage(this)">
+      <img src="img4-thumb.jpg" alt="Image 4" onclick="displayImage(this)">
+    </div>
+    <div class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modal-image">
+    </div>
+  </div>
+  <script src="gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!DOCTYPE html>
+<html>
+<body>
+  <nav>
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="transition.html">Transition</a></li>
+        <li><a href="googleMap.html">Map</a></li>
+        <li><a href="animation.html">Animation</a></li>
+        <li><a href="contact.html">Contact</a></li>  
+    </ul>
+</nav>
+  <h2>Football</h2>
+  <p>
+  Click the button below for more information
+</p>
+<div id="demo">
+<button type="button" onclick="loadXMLDoc()">Premier League Teams</button>
+</div>
+  
+
+
+
+<script>
+function loadXMLDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "xml.txt", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+
+</html>
