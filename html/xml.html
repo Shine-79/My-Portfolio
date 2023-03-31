@@ -8,20 +8,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>XML</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <!DOCTYPE html>
 <html>
 <body>
+  <header>
+    <h1>XML Request</h1>
+  
   <nav>
     <ul>
         <li><a href="../index.html">Home</a></li>
         <li><a href="transition.html">Transition</a></li>
         <li><a href="googleMap.html">Map</a></li>
         <li><a href="animation.html">Animation</a></li>
+        <li><a href="canvas.html">Canvas</a></li>
+        <li><a href="xml.html">XML</a></li>
         <li><a href="contact.html">Contact</a></li>  
     </ul>
 </nav>
+</header>
   <h2>Football</h2>
   <p>
   Click the button below for more information
@@ -42,7 +49,7 @@ function loadXMLDoc() {
       this.responseText;
     }
   };
-  xhttp.open("GET", "xml.txt", true);
+  xhttp.open("GET", "../xml.txt", true);
   xhttp.send();
 }
 </script>
