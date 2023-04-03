@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>XML</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../Css/style.css">
 </head>
 <!DOCTYPE html>
 <html>
@@ -14,16 +14,18 @@
   <h1>Web Workers</h1>
 
 <nav>
-  <ul>
+  <nav>
+    <ul>
       <li><a href="../index.html">Home</a></li>
       <li><a href="transition.html">Transition</a></li>
       <li><a href="googleMap.html">Map</a></li>
       <li><a href="animation.html">Animation</a></li>
       <li><a href="canvas.html">Canvas</a></li>
       <li><a href="xml.html">XML</a></li>
-      <li><a href="html/webworkers.html">Web Workers</a></li>
-      <li><a href="contact.html">Contact</a></li>  
-  </ul>
+      <li><a href="webworkers.html">Web Workers</a></li>
+      <li><a href="contact.html">Contact</a></li>   
+    </ul>
+</nav>
 </nav>
 <script>
 function clickCounter() {
@@ -40,15 +42,13 @@ function clickCounter() {
 }
 </script>
 <script>
-
-
 /* This is the web worker */
 var w;
 
 function startWorker() {
   if(typeof(Worker) !== "undefined") {
     if(typeof(w) == "undefined") {
-      w = new Worker("html/webworker.js");
+      w = new Worker("../JS/webworker.js");
     }
     w.onmessage = function(event) {
       document.getElementById("result1").innerHTML = event.data;
@@ -75,7 +75,5 @@ function stopWorker() {
 <p>Count numbers: <output id="result1"></output></p>
 <button onclick="startWorker()">Start Worker</button> 
 <button onclick="stopWorker()">Stop Worker</button>
-
-<p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support Web Workers.</p>
 </body>
 </html>
