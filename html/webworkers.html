@@ -7,75 +7,68 @@
   <title>XML</title>
   <link rel="stylesheet" href="../Css/style.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-</head>
-<!DOCTYPE html>
-<html>
-<body>
-<header>
-  <h1>Web Workers</h1>
-
-<nav>
-  <nav>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="transition.html">Transition</a></li>
-      <li><a href="googleMap.html">Map</a></li>
-      <li><a href="animation.html">Animation</a></li>
-      <li><a href="canvas.html">Canvas</a></li>
-      <li><a href="xml.html">XML</a></li>
-      <li><a href="webworkers.html">Web Workers</a></li>
-      <li><a href="contact.html">Contact</a></li>   
-    </ul>
-</nav>
-</nav>
-<script>
-function clickCounter() {
-  if (typeof(Storage) !== "undefined") {
-    if (localStorage.clickcount) {
-      localStorage.clickcount = Number(localStorage.clickcount)+1;
-    } else {
-      localStorage.clickcount = 1;
-    }
-    document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
-  } else {
-    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
-  }
-}
-</script>
-<script>
-/* This is the web worker */
-var w;
-
-function startWorker() {
-  if(typeof(Worker) !== "undefined") {
-    if(typeof(w) == "undefined") {
-      w = new Worker("../JS/webworker.js");
-    }
-    w.onmessage = function(event) {
-      document.getElementById("result1").innerHTML = event.data;
-    };
-  } else {
-    document.getElementById("result1").innerHTML = "Sorry, your browser does not support Web Workers...";
-  }
-}
-
-function stopWorker() { 
-  w.terminate();
-  w = undefined;
-}
-</script>
-
 </head>
 <body>
-<!-- This is the click counter html-->
-<p><button onclick="clickCounter()" type="button">Click me!</button></p>
-<div id="result"></div>
-<p>Click the button to see the counter increase.</p>
-<p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
-<!-- This is the web worker-->
-<p>Count numbers: <output id="result1"></output></p>
-<button onclick="startWorker()">Start Worker</button> 
-<button onclick="stopWorker()">Stop Worker</button>
+  <header>
+    <h1>Web Workers</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="transition.html">Transition</a></li>
+        <li><a href="googleMap.html">Map</a></li>
+        <li><a href="animation.html">Animation</a></li>
+        <li><a href="canvas.html">Canvas</a></li>
+        <li><a href="xml.html">XML</a></li>
+        <li><a href="webworkers.html">Web Workers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- This is the click counter html-->
+  <p>
+    <button onclick="clickCounter()" type="button">Click me!</button>
+  </p>
+  <div id="result"></div>
+  <p>Click the button to see the counter increase.</p>
+  <p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
+  <!-- This is the web worker-->
+  <p>Count numbers: <output id="result1"></output></p>
+  <button onclick="startWorker()">Start Worker</button>
+  <button onclick="stopWorker()">Stop Worker</button>
+  <script>
+    function clickCounter() {
+      if (typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+          localStorage.clickcount = Number(localStorage.clickcount) + 1;
+        } else {
+          localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+      } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+      }
+    }
+
+    /* This is the web worker */
+    var w;
+
+    function startWorker() {
+      if (typeof(Worker) !== "undefined") {
+        if (typeof(w) == "undefined") {
+          w = new Worker("../JS/webworker.js");
+        }
+        w.onmessage = function(event) {
+          document.getElementById("result1").innerHTML = event.data;
+        };
+      } else {
+        document.getElementById("result1").innerHTML = "Sorry, your browser does not support Web Workers...";
+      }
+    }
+
+    function stopWorker() {
+      w.terminate();
+      w = undefined;
+    }
+  </script>
 </body>
 </html>
