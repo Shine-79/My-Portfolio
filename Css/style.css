@@ -34,7 +34,7 @@ header {
 /* navigation */
 header nav {
   background-color: #333;
-  color: #fff;
+  color: #ffffff;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -83,7 +83,7 @@ h2 {
 }
 
 .box {
-  width: 200px;
+  width: 400px;
   height: 200px;
   background-color: blue;
   color: white;
