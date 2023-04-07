@@ -6,3 +6,5 @@ The portolio is self explanatory from the navigation bar to include the requirem
 The home page has an image that is greyscale when you hover over it.
 
 Code was taken and then modified from W3Schools and MDN.
+
+Contribution and assistance from Karen McCarthy, Roger O'Donnel, and Alen Krga
